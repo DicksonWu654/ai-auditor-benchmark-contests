@@ -31,3 +31,34 @@ Each contest folder includes:
 | Virtuals | Virtuals Protocol | Code4rena | 2025-04-17 to 2025-05-07 | 6 | 26 | [Virtuals](./contests/virtuals/) | [source](https://github.com/code-423n4/2025-04-virtuals-protocol/tree/28e93273daec5a9c73c438e216dde04c084be452) | [report](https://code4rena.com/reports/2025-04-virtuals-protocol) |
 
 The full table is also available in [`contests_summary.md`](./contests_summary.md).
+
+## Benchmark Context
+
+Wake Arena uses this 14-protocol historical audit competition benchmark set. Ackee states that it used the same historical audit competition dataset as Zellic for its V12 benchmark comparisons.
+
+This is not the same dataset as EVMbench. EVMbench uses a broader benchmark built from 40 repositories and 120 vulnerability tasks, mostly drawn from Code4rena audits, plus 3 Tempo scenarios.
+
+Overlap between this repository and EVMbench:
+- Basin
+- Blackhole
+- Munchables
+- TraitForge
+- Phi
+- Virtuals
+
+Contests in this repository that are not part of EVMbench:
+- Burve
+- Crestal
+- DODO
+- Lambo.win
+- Lend
+- Mellow
+- Notional Exponent
+- Superfluid
+
+Sources:
+- Wake Arena benchmark page: https://ackee.xyz/wake/arena
+- Wake Arena benchmark post: https://ackee.xyz/blog/wake-arena-multi-agent-ai-audit-with-graph-driven-reasoning/
+- Zellic V12 launch post: https://www.zellic.io/blog/introducing-v12/
+- OpenAI EVMbench announcement: https://openai.com/index/introducing-evmbench/
+- EVMbench paper: https://cdn.openai.com/evmbench/evmbench.pdf
