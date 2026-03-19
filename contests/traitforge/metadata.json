@@ -1,0 +1,10 @@
+{
+  "platform": "Code4rena",
+  "date": "2024-07-29 to 2024-08-06",
+  "protocol": "TraitForge is a competitive and collaborative breeding game with a nuke function.",
+  "source_url": "https://github.com/code-423n4/2024-07-traitforge/tree/279b2887e3d38bc219a05d332cbcb0655b2dc644",
+  "report_url": "https://code4rena.com/reports/2024-07-traitforge",
+  "highs": 6,
+  "mediums": 19,
+  "audited_commit": "279b2887e3d38bc219a05d332cbcb0655b2dc644"
+}

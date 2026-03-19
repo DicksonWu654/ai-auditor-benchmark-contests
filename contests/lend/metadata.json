@@ -1,0 +1,10 @@
+{
+  "platform": "Sherlock",
+  "date": "2025-05-27 to 2025-06-03",
+  "protocol": "LEND",
+  "source_url": "https://github.com/tenfinance/Lend-V2/tree/5c9398fef079319ecc4e8457b11533d0d8838ee0",
+  "report_url": "https://github.com/sherlock-audit/2025-05-lend-audit-contest-judging/issues",
+  "highs": 28,
+  "mediums": 11,
+  "audited_commit": "5c9398fef079319ecc4e8457b11533d0d8838ee0"
+}

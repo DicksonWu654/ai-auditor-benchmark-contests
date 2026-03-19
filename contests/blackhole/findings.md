@@ -1,0 +1,28 @@
+# Official High and Medium Findings
+
+| Finding ID | Severity | Title | Description |
+| --- | --- | --- | --- |
+| H-01 | High | Router address validation logic error prevents valid router assignment | The router setter is inverted: it only accepts `address(0)`, so the owner cannot replace a misconfigured router and GenesisPool launches can fail. |
+| H-02 | High | Reward token in `GaugeFactoryCL` can be drained by anyone | A public `createGauge` path lets an attacker instantiate gauges and trigger farming setup with arbitrary reward-token inputs, which can be used to drain the reward token. |
+| M-01 | Medium | `MinterUpgradeable`: double-subtracting smNFT burns causes rebase underpayment | smNFT burns are subtracted twice in `calculate_rebase()`, causing the rebase to underpay holders when smNFTs exist. |
+| M-02 | Medium | Critical access control flaw: Role removal logic incorrectly grants unauthorized roles | Role removal rewrites a user's array with the last global role, accidentally granting users roles they should not have. |
+| M-03 | Medium | `1e10` fixed farming reward in `GaugeFactoryCL` | The farm-seeding logic hardcodes a `1e10` reward, making the initial incentive amount and derived rate incorrect for every new pool. |
+| M-04 | Medium | Logic error in AVM original owner resolution | The AVM-aware original-owner lookup is present in `claim()` but missing from `claim_many()`, so AVM-managed token rewards can be sent to the wrong recipient. |
+| M-05 | Medium | Griefing attack on `GenesisPoolManager.sol::depositNativeToken` leading to Denial of Service | A caller can grief `depositNativeToken` during GenesisPool setup, blocking pool creation and causing a denial of service. |
+| M-06 | Medium | First liquidity provider can DOS the pool of a stable pair | Rounding in the stable-pair invariant math can collapse the initial liquidity calculation to zero and brick the pool for the first LP. |
+| M-07 | Medium | `isGenesis` flag is ineffective to control add liquidity flow in `RouterV2.addLiquidity()` | The Genesis-pair launch guard in `RouterV2.addLiquidity()` is bypassable once any LP supply exists, and `Pair.mint()` has no Genesis restriction, so outsiders can add liquidity too early. |
+| M-08 | Medium | Function return variable shadowing prevents storage updates in solidity | `GaugeCL.notifyRewardAmount` shadows the storage `rewardRate`, so the contract never updates the real emission rate. |
+| M-09 | Medium | Zero-receiver fund burn | When `receiver` is unset, RouterV2 burns funds to the zero address instead of forwarding them to the intended recipient. |
+| M-10 | Medium | ERC-2612 permit front-running in `RouterV2` enables DoS of liquidity operations | Unprotected ERC-2612 permit handling lets a front-runner invalidate liquidity operations and cause a DoS. |
+| M-11 | Medium | Incorrect function call in `BribeFactoryV3` `recoverERC20AndUpdateData` | The bribe recovery path calls the wrong interface function, so reward-accounting updates never happen after token recovery. |
+| M-12 | Medium | Epoch voting restrictions bypassed via `deposit_for()` for blacklisted/non-whitelisted tokenIDs | `deposit_for()` skips the post-epoch whitelist checks, letting blacklisted or non-whitelisted NFTs increase vote weight after voting has closed. |
+| M-13 | Medium | EIP-712 domain type hash mismatch breaks signature-based delegation | The EIP-712 domain separator hash does not match the encoded domain fields, breaking signature-based delegation. |
+| M-14 | Medium | Checkpoints are incorrectly cleared during `transferFrom` | Checkpoint cleanup during `transferFrom` can incorrectly erase delegation history while moving NFTs. |
+| M-15 | Medium | `L2Governor.execute()` accepts `Expired` / `Defeated` proposals, attacker front-runs `BlackGovernor` `nudge()`, blocks legitimate emission-rate votes, freezes tail emissions | Allowing expired or defeated proposals through `L2Governor.execute()` lets an attacker front-run `nudge()` and freeze intended emission changes. |
+| M-16 | Medium | `getVotes` inside the `BlackGovernor` incorrectly provides `block.number` instead of `block.timestamp`, leading to complete DOS of proposal functionality | The governor passes `block.number` where the voting logic expects a timestamp, which can break proposal creation entirely. |
+| M-17 | Medium | Users can cast their votes multiple times for the proposal by transferring their nfts and then voting again | Vote tracking is only per address, so a user can transfer an NFT and vote again to cast multiple votes. |
+| M-18 | Medium | Status does not update inside the `BlackGovernor` leading to complete distribution of nudge functionality | `BlackGovernor` never updates its internal status, so `nudge()` follows the wrong branch and emission changes do not apply. |
+| M-19 | Medium | Quorum does not include the `againstVotes` leading to emissions rate staying the same even if it should decrease | Ignoring `againstVotes` in quorum checks can leave emissions unchanged when the proposal outcome should have reduced them. |
+| M-20 | Medium | `getsmNFTPastVotes` incorrectly checks for Voting Power leading to some NFTs incorrectly being eligible to vote | `getsmNFTPastVotes` uses the wrong voting-power check, making some NFTs eligible when they should not be. |
+| M-21 | Medium | Governance emission adjustment ignored when weekly emission above tail threshold | Governance emission adjustments are skipped whenever weekly emissions stay above the tail threshold, so DAO control is not applied when intended. |
+| M-22 | Medium | Governance deadlock potential in `BlackGovernor.sol` due to quorum mismatch | The proposal-threshold and quorum logic are misaligned, creating a deadlock risk for `BlackGovernor`. |

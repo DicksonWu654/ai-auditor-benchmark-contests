@@ -1,0 +1,18 @@
+# Official High and Medium Findings
+
+| Finding ID | Severity | Title | Description |
+| --- | --- | --- | --- |
+| H-01 | High | Loss of User Funds in VirtualToken’s `cashIn` Function Due to Incorrect Amount Minting | `cashIn()` transfers the ERC20 amount from the user, but mints with `msg.value` instead of `amount`, so ERC20 deposits can end up minting 0 virtual tokens. |
+| H-02 | High | LamboFactory can be permanently DoS-ed due to `createPair` call reversal | `LamboFactory.createLaunchPad()` can be front-run by an attacker who creates the next pair first, causing the factory's `createPair` call to fail and blocking launches. |
+| H-03 | High | Calculation for `directionMask` is incorrect | `_getQuoteAndDirection` can compute the wrong direction for the Uniswap V3 pool, which leads to incorrect rebalancing direction and potential financial loss. |
+| H-04 | High | Anyone can call `LamboRebalanceOnUniwap.sol::rebalance()` function with any arbitrary value, leading to rebalancing goal i.e. (1:1 peg) unsuccessful. | `rebalance()` accepts arbitrary `directionMask`, `amountIn`, and `amountOut` values, so unauthenticated callers can trigger wrong flashloan parameters or reverts and leave the peg unrebalanced. |
+| M-01 | Medium | Since the cost of launching a new pool is minimal, an attacker can maliciously consume VirtualTokens | A low-cost pool launch can repeatedly consume the per-block `takeLoan` limit, preventing legitimate users from launching new pools. |
+| M-02 | Medium | `LamboRebalanceOnUniswap::_getTokenInOut` formula used to compute rebalancing amount is wrong for a UniV3 pool | The rebalance math assumes a constant-sum AMM and does not fit Uniswap V3's liquidity model, so the computed amount can be wrong. |
+| M-03 | Medium | `sellQuote` and `buyQuote` are missing deadline check in LamboVEthRouter | Without a deadline, quote-based swaps can sit in the mempool and execute much later against stale prices, which increases sandwich risk. |
+| M-04 | Medium | Accumulated ETH in the LamboVEthRouter will be irretrievable | ETH can accumulate in `LamboVEthRouter` over time, but there is no path to recover it, so the funds become stuck. |
+| M-05 | Medium | Incorrect Struct Field and Hardcoded `sqrtPriceLimitX96` in `_getQuoteAndDirection` | The quote helper uses the wrong struct field and a hardcoded `sqrtPriceLimitX96`, which can allow unfavorable execution or runtime failure. |
+| M-06 | Medium | Attacker can capture VETH-WETH depeg profits through a malicious pool, rendering rebalancer useless if VETH Price > WETH Price | A malicious pool can divert the depeg profit path, so the rebalancer may fail to restore the VETH/WETH peg when VETH trades above WETH. |
+| M-07 | Medium | Rebalance profit requirement prevents maintaining VETH/WETH peg | Requiring positive profit before rebalancing prevents peg restoration in zero-profit or temporarily unprofitable conditions. |
+| M-08 | Medium | Users can prevent protocol from rebalancing for his gain and cause loss of funds for protocol and its users | The rebalance flow can be gamed so that users keep positions from being rebalanced, which blocks peg repair and can harm both protocol and users. |
+| M-09 | Medium | Rebalance will be completely dossed if OKX commision rate goes beyond the fee limits | If OKX commission exceeds the expected fee bounds, the rebalance trade loses profitability and the operation can fail or be permanently DoS-ed. |
+| M-10 | Medium | LP for v3 pool of underlying tokens with decimals != 18 would have incorrect NFT metadata | `VirtualToken.sol` assumes 18 decimals, so V3 liquidity positions for non-18-decimal underlyings can produce incorrect NFT metadata. |

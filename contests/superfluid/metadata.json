@@ -1,0 +1,10 @@
+{
+  "platform": "Sherlock",
+  "date": "2024-11-20 to 2024-11-24",
+  "protocol": "Superfluid Locker System",
+  "source_url": "https://github.com/superfluid-finance/fluid/tree/6cb9f19564f1af239d18916e68eaa2a62597497a",
+  "report_url": "https://github.com/sherlock-audit/2024-11-superfluid-locking-contract-judging/issues",
+  "highs": 3,
+  "mediums": 3,
+  "audited_commit": "6cb9f19564f1af239d18916e68eaa2a62597497a"
+}

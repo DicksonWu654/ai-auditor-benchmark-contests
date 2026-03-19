@@ -1,0 +1,10 @@
+{
+  "platform": "Sherlock",
+  "date": "2025-07-02",
+  "protocol": "Notional Exponent is a leveraged yield protocol that uses Morpho borrowing to enable leveraged staking, leveraged PT, and leveraged liquidity strategies.",
+  "source_url": "https://github.com/notional-finance/notional-v4/tree/0096f1f64071cafbf20062a7c092c6ec89c28275",
+  "report_url": "https://github.com/sherlock-audit/2025-06-notional-exponent-judging/blob/main/README.md",
+  "highs": 11,
+  "mediums": 26,
+  "audited_commit": "0096f1f64071cafbf20062a7c092c6ec89c28275"
+}

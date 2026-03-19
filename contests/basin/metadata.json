@@ -1,0 +1,10 @@
+{
+  "platform": "Code4rena",
+  "date": "2023-07-03 to 2023-07-10",
+  "protocol": "Basin is an EVM-native DEX architecture built around composable Wells, Pumps, and Aquifers.",
+  "source_url": "https://github.com/code-423n4/2023-07-basin/tree/9403cf973e95ef7219622dbbe2a08396af90b64c",
+  "report_url": "https://code4rena.com/reports/2023-07-basin",
+  "highs": 1,
+  "mediums": 13,
+  "audited_commit": "9403cf973e95ef7219622dbbe2a08396af90b64c"
+}

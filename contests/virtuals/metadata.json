@@ -1,0 +1,10 @@
+{
+  "platform": "Code4rena",
+  "date": "2025-04-17 to 2025-05-07",
+  "protocol": "Virtuals Protocol",
+  "source_url": "https://github.com/code-423n4/2025-04-virtuals-protocol/tree/28e93273daec5a9c73c438e216dde04c084be452",
+  "report_url": "https://code4rena.com/reports/2025-04-virtuals-protocol",
+  "highs": 6,
+  "mediums": 26,
+  "audited_commit": "28e93273daec5a9c73c438e216dde04c084be452"
+}

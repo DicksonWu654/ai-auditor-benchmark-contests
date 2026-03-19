@@ -1,0 +1,10 @@
+{
+  "platform": "Code4rena",
+  "date": "2025-05-28 to 2025-06-09",
+  "protocol": "Blackhole",
+  "source_url": "https://github.com/code-423n4/2025-05-blackhole/tree/92fff849d3b266e609e6d63478c4164d9f608e91",
+  "report_url": "https://code4rena.com/reports/2025-05-blackhole",
+  "highs": 2,
+  "mediums": 22,
+  "audited_commit": "92fff849d3b266e609e6d63478c4164d9f608e91"
+}

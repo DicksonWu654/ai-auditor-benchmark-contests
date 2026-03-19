@@ -1,0 +1,10 @@
+{
+  "platform": "Sherlock",
+  "date": "July 2025",
+  "protocol": "Mellow Flexible Vaults",
+  "source_url": "https://github.com/mellow-finance/flexible-vaults/tree/72f689f965e4ac1a4c2bcfb645a8b5416cf740c7",
+  "report_url": "https://1022099409-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-Mk3LEacyGwD8y6mb9-2%2Fuploads%2FNs4351hVFYzadiFii2az%2FNethermind_Mellow-Core-Vaults_20250903.pdf?alt=media&token=f4d3480d-f11f-4bb2-8b8e-ff22c5f96298",
+  "highs": 2,
+  "mediums": 0,
+  "audited_commit": "72f689f965e4ac1a4c2bcfb645a8b5416cf740c7"
+}

@@ -1,0 +1,10 @@
+{
+  "platform": "Code4rena",
+  "date": "2024-12-02 20:00 UTC to 2024-12-09 20:00 UTC",
+  "protocol": "Lambo.win",
+  "source_url": "https://github.com/code-423n4/2024-12-lambowin/tree/874fafc7b27042c59bdd765073f5e412a3b79192",
+  "report_url": "https://code4rena.com/reports/2024-12-lambowin",
+  "highs": 4,
+  "mediums": 10,
+  "audited_commit": "874fafc7b27042c59bdd765073f5e412a3b79192"
+}

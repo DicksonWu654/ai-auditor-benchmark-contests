@@ -1,0 +1,10 @@
+{
+  "platform": "Code4rena",
+  "date": "2024-07-23 to 2024-07-29",
+  "protocol": "Munchables",
+  "source_url": "https://github.com/code-423n4/2024-07-munchables/blob/94cf468aaabf526b7a8319f7eba34014ccebe7b9/src/managers/LandManager.sol",
+  "report_url": "https://code4rena.com/reports/2024-07-munchables",
+  "highs": 5,
+  "mediums": 1,
+  "audited_commit": "94cf468aaabf526b7a8319f7eba34014ccebe7b9"
+}

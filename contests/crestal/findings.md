@@ -1,0 +1,11 @@
+# Official High and Medium Findings
+
+| Finding ID | Severity | Title | Description |
+| --- | --- | --- | --- |
+| H-1 | High | Anyone who is approving `BlueprintV5` contract to spend ERC20 can get drained because `Payment::payWithERC20` | `payWithERC20` is public, so anyone can call it with a victim who has approved `BlueprintV5` and transfer those approved ERC-20 funds to an arbitrary recipient. |
+| M-1 | Medium | `createCommonProjectIDAndDeploymentRequest()` hardcodes request id index to 0, leading to lost requests for users | Reusing a fixed request index lets a second agent creation overwrite the first request for the same project and server URL, which strands one of the paid requests. |
+| M-2 | Medium | Signatures missing some parameters being vulnerable to attackers using them coupled with malicious parameters | The signature flows omit important arguments such as `tokenAddress`, `tokenId`, and `privateWorkerAddress`, so an attacker can reuse a valid signature with altered inputs from the bundler mempool. |
+| M-3 | Medium | Signature Replay attack possible on `updateWorkerDeploymentConfigWithSig()` in Blueprintcore.sol which leads to users lose the funds | The signed update message is reusable because the flow lacks replay protection, allowing the same signature to be submitted repeatedly and charge the user multiple times. |
+| M-4 | Medium | Lack of access control in `setWorkerPublicKey()` in BlueprintCore.sol which results users to lose funds | Any address can register itself as a worker and publish a key, which lets a malicious worker enter the public worker list and divert deployments and payments. |
+| M-5 | Medium | Worker-Induced Denial-of-Service in Deployment Requests Due to Lack of a Cancellation Mechanism | A picked-up deployment request can remain stuck forever because there is no timeout or cancellation path to recover an abandoned request. |
+| M-6 | Medium | Non whitelisted user can also create agent by calling createAgentWithNFT instead of createAgentWithWhitelistUsers affecting the motive of protocol to only allow whitelisted user to create agent | The whitelist-only path is bypassable because the NFT-based agent creation flow remains callable, so non-whitelisted users can still create agents. |

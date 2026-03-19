@@ -1,0 +1,12 @@
+{
+  "platform": "Sherlock",
+  "date": "June 2025",
+  "protocol": "DODO Cross-Chain DEX",
+  "source_url": "https://github.com/Skyewwww/omni-chain-contracts/tree/2fe44d3da76b721e4d32addfecb04ca97a39cb0d",
+  "report_url": "https://github.com/sherlock-audit/2025-05-dodo-cross-chain-dex-judging/issues",
+  "highs": 5,
+  "mediums": 3,
+  "high_ids": ["347", "696", "372", "480", "917"],
+  "medium_ids": ["155", "752", "902"],
+  "audited_commit": "2fe44d3da76b721e4d32addfecb04ca97a39cb0d"
+}

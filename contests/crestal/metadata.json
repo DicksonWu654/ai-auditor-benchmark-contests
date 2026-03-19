@@ -1,0 +1,10 @@
+{
+  "platform": "Sherlock",
+  "date": "2025-03-11 to 2025-03-14",
+  "protocol": "Crestal Network",
+  "source_url": "https://github.com/crestalnetwork/crestal-omni-contracts/tree/dc45e98af5e247dce5bbe53b0bd5b1f256884f84",
+  "report_url": "https://github.com/sherlock-protocol/sherlock-reports/blob/main/audits/2025.03.14%20-%20Final%20-%20Crestal%20Network%20Audit%20Report.pdf",
+  "highs": 1,
+  "mediums": 6,
+  "audited_commit": "dc45e98af5e247dce5bbe53b0bd5b1f256884f84"
+}

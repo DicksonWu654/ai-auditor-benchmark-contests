@@ -1,0 +1,10 @@
+{
+  "platform": "Sherlock",
+  "date": "2025-04-19 to 2025-05-07",
+  "protocol": "Burve",
+  "source_url": "https://github.com/itos-finance/Burve/tree/945f30bfae8afc41af21305ff8c2271ca0ffe6c3",
+  "report_url": "https://github.com/sherlock-audit/2025-04-burve-judging/blob/main/README.md",
+  "highs": 9,
+  "mediums": 6,
+  "audited_commit": "945f30bfae8afc41af21305ff8c2271ca0ffe6c3"
+}

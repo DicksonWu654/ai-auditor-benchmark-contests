@@ -1,0 +1,10 @@
+{
+  "platform": "Code4rena",
+  "date": "2024-08-22 to 2024-09-03",
+  "protocol": "Phi Protocol",
+  "source_url": "https://github.com/code-423n4/2024-08-phi/tree/f67c29b7cb93b710080681c88a4dfcaf714d3e5d",
+  "report_url": "https://code4rena.com/reports/2024-08-phi",
+  "highs": 7,
+  "mediums": 8,
+  "audited_commit": "f67c29b7cb93b710080681c88a4dfcaf714d3e5d"
+}
